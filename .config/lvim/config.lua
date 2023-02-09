@@ -1,0 +1,6 @@
+require("configurations.config")
+require("configurations.keys")
+require("configurations.plugins")
+require("configurations.lsp")
+require("configurations.autocommands")
+require('leap').add_default_mappings()
