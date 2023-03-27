@@ -15,6 +15,9 @@ source $ZSH/oh-my-zsh.sh
 unset rc
 . "$HOME/.cargo/env"
 
+# vi bidings
+set -o vi
+
 # Extract
 # usage: ex <file>
 ex()
@@ -51,6 +54,7 @@ alias ...="cd ../.."
 alias .3="cd ../../.."
 alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
+alias home="cd ~"
 alias projects="cd ~/Projects/"
 
 # Programs
@@ -68,6 +72,8 @@ alias cp="cp -i"    # confirm before overwriting something
 alias df="df -h"    # human-readable sizes
 alias vim="lvim"
 alias cat="bat"
+
+alias explorer="ranger"
 
 # Process memory
 alias psmem="ps auxf | sort -nr -k 4"
@@ -90,6 +96,19 @@ alias vpn-sessions="openvpn3 sessions-list"
 # One Driver Sync
 alias syncdocs="onedrive --synchronize --single-directory Documentos"
 
+# Docker
+alias docker-start="systemctl start docker"
+alias docker-stop="systemctl stop docker"
+
+# Flutter
+alias flutter-generate="flutter packages pub run build_runner build --delete-conflicting-outputs"
+
 eval "$(starship init zsh)"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
