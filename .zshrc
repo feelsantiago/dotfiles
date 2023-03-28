@@ -71,7 +71,7 @@ alias fgrep="fgrep --color=auto"
 alias cp="cp -i"    # confirm before overwriting something
 alias df="df -h"    # human-readable sizes
 alias vim="lvim"
-alias cat="bat"
+alias cat="batcat"
 
 alias explorer="ranger"
 
