@@ -103,6 +103,9 @@ alias docker-stop="systemctl stop docker"
 # Flutter
 alias flutter-generate="flutter packages pub run build_runner build --delete-conflicting-outputs"
 
+# XbindKeys
+alias find-key="xbindkeys --key"
+
 eval "$(starship init zsh)"
 
 export NVM_DIR="$HOME/.nvm"

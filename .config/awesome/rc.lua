@@ -1,20 +1,20 @@
 -- {{{ Required libraries
 local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
 
-local gears     = require("gears")
-local awful     = require("awful")
-local beautiful = require("beautiful")
-local naughty   = require("naughty")
-local lain      = require("lain")
-local dpi       = require("beautiful.xresources").apply_dpi
+local gears                               = require("gears")
+local awful                               = require("awful")
+local beautiful                           = require("beautiful")
+local naughty                             = require("naughty")
+local lain                                = require("lain")
+local dpi                                 = require("beautiful.xresources").apply_dpi
 require("awful.autofocus")
 -- }}}
 
-globalkeys = require("keys.keys")
-awful.rules.rules = require("rules.rules")
+globalkeys                             = require("keys.keys")
+awful.rules.rules                      = require("rules.rules")
 
-awful.util.terminal = terminal
-awful.layout.layouts = {
+awful.util.terminal                    = terminal
+awful.layout.layouts                   = {
     awful.layout.suit.tile,
     awful.layout.suit.max,
     awful.layout.suit.floating
@@ -130,7 +130,6 @@ for s = 1, screen.count() do
                 elseif layout == "max" or layout == "fullscreen" then
                     c.border_width = 0
                 else
-
                     local tiled = awful.client.tiled(c.screen)
                     if #tiled == 1 then
                         tiled[1].border_width = 0
