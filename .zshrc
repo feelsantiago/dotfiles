@@ -103,12 +103,13 @@ alias docker-stop="systemctl stop docker"
 # Flutter
 alias flutter-generate="flutter packages pub run build_runner build --delete-conflicting-outputs"
 
+# SSH
+alias ssh-git="keychain --agents ssh --eval git-linux"
+
 # XbindKeys
 alias find-key="xbindkeys --key"
 
 eval "$(starship init zsh)"
-eval "$(xbindkeys)"
-eval "$(ssh-agent -s)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

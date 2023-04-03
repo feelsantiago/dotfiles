@@ -33,6 +33,9 @@ local lockscreen        = "betterlockscreen -l dim"
 local get_brightness    = "xbacklight -get"
 local volume            = require("awesome-wm-widgets.volume-widget.volume")
 
+local screenshot        = 'flameshot screen -p ~/Pictures'
+local screenshot_region = 'flameshot gui -p ~/Pictures'
+
 menubar.show_categories = false
 
 my_dropdown             = lain.util.quake({
@@ -232,18 +235,12 @@ local globalkeys        = gears.table.join(
         { description = "Browser menu ", group = "launcher" }),
 
     awful.key({}, "Print",
-        function() spawn(scripts_dir .. "full-screenshot") end,
+        function() spawn.with_shell('flameshot screen -p ~/Pictures') end,
         { description = "capture a screenshot", group = "screenshot" }),
 
     awful.key({ ctrlkey }, "Print",
-        function() spawn(scripts_dir .. "window-screenshot") end,
+        function() spawn.with_shell(screenshot_region) end,
         { description = "take screenshot of active window", group = "screenshot" }),
-
-    awful.key({ altkey }, "Print",
-        function() spawn(scripts_dir .. "area-screenshot") end,
-        { description = "take screenshot of selection", group = "screenshot" }),
-    awful.key({ "Shift" }, "Print", function() spawn(scripts_dir .. "ocr") end,
-        { description = "Get OCR text of selection to", group = "screenshot" }),
 
     -- modkey + altkey combination of screenshot related keybindings
     awful.key({ modkey, altkey }, "f",
@@ -261,10 +258,6 @@ local globalkeys        = gears.table.join(
     awful.key({ modkey, altkey }, "g",
         function() spawn(scripts_dir .. "ocr") end,
         { description = "Get OCR text of selection to", group = "screenshot" }),
-
-    awful.key({ modkey }, "Print",
-        function() spawn(rofi_dir .. "screenshot/launcher.sh") end,
-        { description = "screenshot rofi menu", group = "screenshot" }),
 
     awful.key({ modkey, "Shift" }, "c",
         function(c) spawn("xkill") end,
