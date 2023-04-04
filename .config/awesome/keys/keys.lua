@@ -33,9 +33,6 @@ local lockscreen        = "betterlockscreen -l dim"
 local get_brightness    = "xbacklight -get"
 local volume            = require("awesome-wm-widgets.volume-widget.volume")
 
-local screenshot        = 'flameshot screen -p ~/Pictures'
-local screenshot_region = 'flameshot gui -p ~/Pictures'
-
 menubar.show_categories = false
 
 my_dropdown             = lain.util.quake({
@@ -235,11 +232,11 @@ local globalkeys        = gears.table.join(
         { description = "Browser menu ", group = "launcher" }),
 
     awful.key({}, "Print",
-        function() spawn.with_shell('flameshot screen -p ~/Pictures') end,
+        function() spawn.with_shell('flameshot gui') end,
         { description = "capture a screenshot", group = "screenshot" }),
 
     awful.key({ ctrlkey }, "Print",
-        function() spawn.with_shell(screenshot_region) end,
+        function() spawn.with_shell('flameshot screen -p ~/Pictures') end,
         { description = "take screenshot of active window", group = "screenshot" }),
 
     -- modkey + altkey combination of screenshot related keybindings
