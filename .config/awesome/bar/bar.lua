@@ -10,6 +10,7 @@ local fs        = require("awesome-wm-widgets.fs-widget.fs-widget")
 local logout    = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 local net_speed = require("awesome-wm-widgets.net-speed-widget.net-speed")
 local ram       = require("awesome-wm-widgets.ram-widget.ram-widget")
+local spotify   = require("awesome-wm-widgets.spotify-widget.spotify")
 
 -- -- Create an imagebox widget which will contains an icon indicating which layout we're using.
 -- -- We need one layoutbox per screen.
@@ -117,6 +118,15 @@ local bar       = function(s, theme)
         {
             -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            spotify({
+                play_icon = '/usr/share/icons/Papirus-Light/24x24/categories/spotify.svg',
+                pause_icon = '/usr/share/icons/Papirus-Dark/24x24/panel/spotify-indicator.svg',
+                dim_when_paused = true,
+                dim_opacity = 0.5,
+                max_length = -1,
+                show_tooltip = false,
+            }),
+            separator,
             wibox.layout.margin(wibox.widget.systray(), 3, 3, 3, 3),
             separator,
             docker(),
