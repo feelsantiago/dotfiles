@@ -1,0 +1,28 @@
+return {
+  opt = {
+    number = true,
+    spell = false,
+    wrap = true,
+    backup = false,
+    undofile = true,
+    undodir = vim.fn.stdpath "cache" .. "/undo",
+    hlsearch = false,
+    incsearch = true,
+    spelllang = "en",
+    showbreak = "↪ ",
+    showtabline = 0,
+    tabstop = 4,
+    softtabstop = 4,
+    shiftwidth = 4,
+  },
+  g = {
+    mapleader = " ",
+    autoformat_enabled = true,
+    cmp_enabled = true,
+    autopairs_enabled = true,
+    diagnostics_mode = 3,
+    icons_enabled = true,
+    ui_notifications_enabled = true,
+    colors_name = "nord",
+  },
+}
