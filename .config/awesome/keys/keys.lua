@@ -90,11 +90,11 @@ local globalkeys        = gears.table.join(
 
     -- Layout manipulation
     awful.key({ modkey, ctrlkey }, "h",
-        function() awful.screen.focus_bydirection("left") end,
+        function() awful.screen.focus_relative("-1") end,
         { description = "swap prev monitor", group = "client" }),
 
     awful.key({ modkey, ctrlkey }, "l",
-        function() awful.screen.focus_bydirection("right") end,
+        function() awful.screen.focus_relative("1") end,
         { description = "swap next monitor", group = "client" }),
 
     -- my edits

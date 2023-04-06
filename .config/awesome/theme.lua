@@ -6,7 +6,7 @@ local dpi                       = require("beautiful.xresources").apply_dpi
 local bar                       = require("bar.bar")
 
 -- For changing themes
-local chosen_theme              = "ef-winter"
+local chosen_theme              = "nord"
 local colors                    = require("themes." .. chosen_theme .. ".colors")
 
 local theme                     = colors
