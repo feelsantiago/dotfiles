@@ -113,6 +113,7 @@ alias find-key="xbindkeys --key"
 alias t-sessions="tmux ls"
 alias t-new="tmux new -s"
 alias t-kill="tmux kill-session -t"
+alias t-session="tmux attach -t"
 
 eval "$(starship init zsh)"
 
