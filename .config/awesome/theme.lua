@@ -42,7 +42,7 @@ theme.tasklist_disable_icon     = true
 
 theme.notification_fg           = theme.fg_accent_alt
 theme.notification_bg           = theme.bg_accent_alt
-theme.notification_border_color = theme.bg_accent_alt
+theme.notification_border_color = theme.fg_accent_alt
 
 theme.menubar_fg_focus          = theme.fg_accent_alt
 theme.menubar_bg_focus          = theme.bg_accent_alt
