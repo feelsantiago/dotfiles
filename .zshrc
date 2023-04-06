@@ -57,6 +57,8 @@ alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 alias home="cd ~"
 alias projects="cd ~/Projects/"
+alias awesome="cd ~/.config/awesome/"
+alias vimconfig="cd ~/.config/nvim/"
 
 # Programs
 alias ls="exa -al --color=always --group-directories-first" # best listing
@@ -121,7 +123,6 @@ eval "$(starship init zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
