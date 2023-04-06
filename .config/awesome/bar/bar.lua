@@ -1,16 +1,48 @@
-local gears     = require("gears")
-local awful     = require("awful")
-local wibox     = require("wibox")
-local dpi       = require("beautiful.xresources").apply_dpi
-local volume    = require("awesome-wm-widgets.volume-widget.volume")
-local calendar  = require("awesome-wm-widgets.calendar-widget.calendar")
-local cpu       = require("awesome-wm-widgets.cpu-widget.cpu-widget")
-local docker    = require("awesome-wm-widgets.docker-widget.docker")
-local fs        = require("awesome-wm-widgets.fs-widget.fs-widget")
-local logout    = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
-local net_speed = require("awesome-wm-widgets.net-speed-widget.net-speed")
-local spotify   = require("awesome-wm-widgets.spotify-widget.spotify")
-local ram       = require("awesome-wm-widgets.ram-widget.ram-widget")
+local gears              = require("gears")
+local awful              = require("awful")
+local wibox              = require("wibox")
+local beautiful          = require("beautiful")
+local naughty            = require("naughty")
+local dpi                = require("beautiful.xresources").apply_dpi
+local volume             = require("awesome-wm-widgets.volume-widget.volume")
+local calendar           = require("awesome-wm-widgets.calendar-widget.calendar")
+local cpu                = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+local docker             = require("awesome-wm-widgets.docker-widget.docker")
+local fs                 = require("awesome-wm-widgets.fs-widget.fs-widget")
+local logout             = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
+local net_speed          = require("awesome-wm-widgets.net-speed-widget.net-speed")
+local spotify            = require("awesome-wm-widgets.spotify-widget.spotify")
+local ram                = require("awesome-wm-widgets.ram-widget.ram-widget")
+
+local notifications      = wibox.widget({
+    {
+        id = "icon",
+        image = os.getenv("HOME") .. "/.config/awesome/icons/notification.svg",
+        resize = true,
+        widget = wibox.widget.imagebox,
+    },
+    shape = function(cr, width, height)
+        gears.shape.rounded_rect(cr, width, height, 4)
+    end,
+    bg = beautiful.control_center_button_bg_off,
+    widget = wibox.container.background,
+    toggle_fade = function(self, is_fade)
+        self:get_children_by_id('icon')[1]:set_opacity(is_fade and 0.2 or 1)
+        self:get_children_by_id('icon')[1]:emit_signal('widget::redraw_needed')
+    end
+})
+
+local notifcation_active = true
+notifications:connect_signal('button::press', function(c)
+    notifcation_active = not notifcation_active
+    c:toggle_fade(not notifcation_active)
+    if notifcation_active then
+        naughty.resume()
+    else
+        naughty.suspend()
+    end
+end
+)
 
 -- -- Create an imagebox widget which will contains an icon indicating which layout we're using.
 -- -- We need one layoutbox per screen.
@@ -145,6 +177,8 @@ local bar       = function(s, theme)
             fs(),
             separator,
             LayoutBox(s),
+            separator,
+            notifications,
             separator,
             volume {
                 widget_type = "arc"

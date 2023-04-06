@@ -12,7 +12,6 @@ return {
     },
     ["<leader>b"] = { name = "Buffers" },
     ["J"] = { "mzJ`z", desc = "Keep cursor when J" },
-    ["<C-u>"] = { "<C-r>", desc = "Rendo" },
     ["n"] = { "nzzzv" },
     ["N"] = { "Nzzzv" },
     ["<leader>p"] = { [["_dp]], desc = "Paste without coping" },
