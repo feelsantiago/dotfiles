@@ -10,6 +10,10 @@ local dpi                                 = require("beautiful.xresources").appl
 require("awful.autofocus")
 -- }}}
 
+
+-- local ram = require("awesome-wm-widgets.ram-widget.ram-widget")
+
+
 globalkeys                             = require("keys.keys")
 awful.rules.rules                      = require("rules.rules")
 

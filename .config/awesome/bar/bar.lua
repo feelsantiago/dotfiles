@@ -9,7 +9,6 @@ local docker    = require("awesome-wm-widgets.docker-widget.docker")
 local fs        = require("awesome-wm-widgets.fs-widget.fs-widget")
 local logout    = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 local net_speed = require("awesome-wm-widgets.net-speed-widget.net-speed")
-local ram       = require("awesome-wm-widgets.ram-widget.ram-widget")
 local spotify   = require("awesome-wm-widgets.spotify-widget.spotify")
 
 -- -- Create an imagebox widget which will contains an icon indicating which layout we're using.

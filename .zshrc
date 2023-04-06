@@ -109,6 +109,11 @@ alias ssh-git="keychain --agents ssh --eval git-linux"
 # XbindKeys
 alias find-key="xbindkeys --key"
 
+# Tmux
+alias t-sessions="tmux ls"
+alias t-new="tmux new -s"
+alias t-kill="tmux kill-session -t"
+
 eval "$(starship init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
