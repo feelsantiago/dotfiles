@@ -10,6 +10,7 @@ local fs        = require("awesome-wm-widgets.fs-widget.fs-widget")
 local logout    = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 local net_speed = require("awesome-wm-widgets.net-speed-widget.net-speed")
 local spotify   = require("awesome-wm-widgets.spotify-widget.spotify")
+local ram       = require("awesome-wm-widgets.ram-widget.ram-widget")
 
 -- -- Create an imagebox widget which will contains an icon indicating which layout we're using.
 -- -- We need one layoutbox per screen.
@@ -129,6 +130,8 @@ local bar       = function(s, theme)
             wibox.layout.margin(wibox.widget.systray(), 3, 3, 3, 3),
             separator,
             docker(),
+            separator,
+            ram(),
             separator,
             net_speed(),
             separator,
