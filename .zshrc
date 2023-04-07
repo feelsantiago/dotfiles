@@ -1,7 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export TERM=xterm-256color
 export PATH=$HOME/.npm-global/bin:/$HOME/.local/bin:$HOME/Android/Sdk/emulator:$PATH
+export TERM=xterm-256color
+export COLORTERM=truecolor
 
 ZSH_THEME="robbyrussell"
 

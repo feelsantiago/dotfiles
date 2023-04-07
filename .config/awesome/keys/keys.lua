@@ -15,7 +15,7 @@ local altkey            = "Mod1"
 local ctrlkey           = "Control"
 
 local home              = os.getenv("HOME")
-local terminal          = "alacritty"
+local terminal          = "wezterm"
 
 -- local terminal        = "wezterm"
 local editor            = "vim"
