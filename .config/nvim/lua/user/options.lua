@@ -25,5 +25,6 @@ return {
     icons_enabled = true,
     ui_notifications_enabled = true,
     colors_name = "nord",
+    transparent_enabled = true,
   },
 }

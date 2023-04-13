@@ -22,6 +22,13 @@ return {
     "EdenEast/nightfox.nvim"
   },
   {
+    "xiyaowong/transparent.nvim",
+    event = "VeryLazy",
+    init = function()
+      require('transparent').toggle(true)
+    end
+  },
+  {
     "ahmedkhalf/project.nvim",
     event = "VeryLazy",
     opts = {
@@ -82,23 +89,6 @@ return {
     ft = "dart",
   },
   { "dart-lang/dart-vim-plugin" },
-  {
-    "mxsdev/nvim-dap-vscode-js",
-    requires = "mfussenegger/nvim-dap",
-    config = function()
-      require("dap-vscode-js").setup({
-        debugger_path = os.getenv("HOME") .. "/.config/vscode-plugins/vscode-js-debug",
-        adapters = {
-          "pwa-node",
-          "pwa-chrome",
-          "node-terminal",
-          "paw-extensionHost"
-        }
-      })
-
-      require("configurations.debug")
-    end
-  },
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",

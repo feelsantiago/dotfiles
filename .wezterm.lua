@@ -17,6 +17,7 @@ end
 config.color_scheme = 'nord'
 config.enable_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
+config.window_background_opacity = 0.95
 
 -- and finally, return the configuration to wezterm
 return config

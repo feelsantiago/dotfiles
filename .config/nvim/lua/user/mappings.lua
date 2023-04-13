@@ -49,7 +49,7 @@ return {
     ["<C-\\>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" }
   },
   t = {
-    ["<C-BS>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" },
+    ["<C-x>"] = { [[<C-\><C-n>]], desc = "Terminal normal mode" },
     ["<esc><esc>"] = { "<C-\\><C-n>:q<cr>", desc = "Terminal quit" },
     ["<C-\\>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" }
   },

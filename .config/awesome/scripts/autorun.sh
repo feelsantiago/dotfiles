@@ -21,7 +21,8 @@ fi
 #     xfce4-power-manager &
 # fi
 
-run nitrogen --restore
+# run nitrogen --restore
+run variety --resume
 run xbindkeys
 run nm-applet
 run picom

@@ -7,6 +7,7 @@ local beautiful                           = require("beautiful")
 local naughty                             = require("naughty")
 local lain                                = require("lain")
 local dpi                                 = require("beautiful.xresources").apply_dpi
+local wibox                               = require("wibox")
 require("awful.autofocus")
 -- }}}
 
@@ -36,10 +37,6 @@ lain.layout.cascade.tile.ncol          = 2
 
 -- for new themes
 beautiful.init(string.format("%s/.config/awesome/theme.lua", os.getenv("HOME")))
-
--- Use this for old-themes
--- local chosen_theme = "moonlight"
--- beautiful.init(string.format("%s/.config/awesome/theme.lua", os.getenv("HOME"), chosen_theme))
 
 -- {{{ Helper functions
 local function client_menu_toggle_fn()
@@ -150,33 +147,28 @@ for s = 1, screen.count() do
     )
 end
 
-beautiful.gap_single_client = false
+beautiful.gap_single_client = true
 -- }}}
 
---client.connect_signal("property::floating", function (c)
---    if c.floating then
---        awful.titlebar.show(c)
---    else
---        awful.titlebar.hide(c)
---    end
---end)
---
+client.connect_signal("property::floating", function(c)
+    if c.floating then
+        awful.titlebar.show(c)
+    else
+        awful.titlebar.hide(c)
+    end
+end)
 
 -- Notifications
-naughty.config.padding = 8
-naughty.config.spacing = 8
+naughty.config.padding = dpi(8)
+naughty.config.spacing = dpi(8)
 
 naughty.config.defaults.timeout = 5
 naughty.config.defaults.screen = 1
 naughty.config.defaults.position = 'top_right'
-naughty.config.defaults.margin = dpi(16)
+naughty.config.defaults.margin = dpi(10)
 naughty.config.defaults.ontop = true
-naughty.config.defaults.font = 'Roboto Regular 10'
-naughty.config.defaults.icon = nil
-naughty.config.defaults.icon_size = dpi(32)
-naughty.config.defaults.shape = gears.shape.rounded_rect
-naughty.config.defaults.border_width = 0
-naughty.config.defaults.hover_timeout = nil
+naughty.config.defaults.icon_size = dpi(128)
+naughty.config.defaults.border_width = dpi(0)
 
 if awesome.startup_errors then
     naughty.notify(
