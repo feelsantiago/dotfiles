@@ -13,8 +13,8 @@ local theme                     = colors
 theme.font                      = "AestheticIosevka Nerd Font 10"
 theme.taglist_font              = theme.font
 
-theme.notification_font         = "AestheticIosevka Nerd Font 15"
--- theme.notification_max_width    = 400
+theme.notification_font         = "AestheticIosevka Nerd Font 12"
+theme.notification_max_width    = 400
 
 theme.fg_normal                 = theme.fg_dim
 theme.fg_focus                  = theme.fb_main

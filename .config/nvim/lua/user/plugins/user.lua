@@ -89,21 +89,21 @@ return {
     ft = "dart",
   },
   { "dart-lang/dart-vim-plugin" },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function()
-      local signature_config = {
-        log_path = vim.fn.expand("$HOME") .. "/tmp/sig.log",
-        debug = true,
-        hint_enable = false,
-        handler_opts = { border = "single" },
-        max_width = 80,
-      }
-
-      require("lsp_signature").setup(signature_config)
-    end,
-  },
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "BufRead",
+  --   config = function()
+  --     local signature_config = {
+  --       log_path = vim.fn.expand("$HOME") .. "/tmp/sig.log",
+  --       debug = true,
+  --       hint_enable = false,
+  --       handler_opts = { border = "single" },
+  --       max_width = 80,
+  --     }
+  --
+  --     require("lsp_signature").setup(signature_config)
+  --   end,
+  -- },
   {
     "windwp/nvim-ts-autotag",
     config = function() require("nvim-ts-autotag").setup() end,
