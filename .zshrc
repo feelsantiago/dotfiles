@@ -127,3 +127,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+source /usr/share/autojump/autojump.zsh
