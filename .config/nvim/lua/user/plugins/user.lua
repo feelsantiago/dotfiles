@@ -7,26 +7,22 @@ return {
   --   end
   -- },
   {
-    "nordtheme/vim"
+    "nordtheme/vim",
   },
   {
-    'frenzyexists/aquarium-vim',
-    init = function()
-      vim.g.aquarium_style = "dark"
-    end
+    "frenzyexists/aquarium-vim",
+    init = function() vim.g.aquarium_style = "dark" end,
   },
   {
     "rebelot/kanagawa.nvim",
   },
   {
-    "EdenEast/nightfox.nvim"
+    "EdenEast/nightfox.nvim",
   },
   {
     "xiyaowong/transparent.nvim",
     event = "VeryLazy",
-    init = function()
-      require('transparent').toggle(true)
-    end
+    init = function() require("transparent").toggle(true) end,
   },
   {
     "ahmedkhalf/project.nvim",
@@ -45,7 +41,7 @@ return {
   },
   {
     "elgiano/nvim-treesitter-angular",
-    branch = "topic/jsx-fix"
+    branch = "topic/jsx-fix",
   },
   {
     "akinsho/flutter-tools.nvim",
@@ -127,5 +123,8 @@ return {
   },
   {
     "tpope/vim-repeat",
+  },
+  {
+    "jabirali/vim-tmux-yank",
   },
 }

@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH=$HOME/.npm-global/bin:/$HOME/.local/bin:$HOME/Android/Sdk/emulator:$PATH
+export PATH=$HOME/.npm-global/bin:/$HOME/.local/bin:$HOME/Android/Sdk/emulator:/usr/local/go/bin:/$HOME/go/bin:$PATH
 export TERM=xterm-256color
 export COLORTERM=truecolor
 
@@ -103,6 +103,7 @@ alias syncdocs="onedrive --synchronize --single-directory Documentos"
 # Docker
 alias docker-start="systemctl start docker"
 alias docker-stop="systemctl stop docker"
+alias lzd="lazydocker"
 
 # Flutter
 alias flutter-generate="flutter packages pub run build_runner build --delete-conflicting-outputs"
@@ -128,3 +129,5 @@ export NVM_DIR="$HOME/.nvm"
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 source /usr/share/autojump/autojump.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
