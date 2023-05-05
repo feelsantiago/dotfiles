@@ -6,3 +6,5 @@
 
 [delta]
 	side-by-side = true
+	true-colors = always 
+	syntax-thene = Nord
