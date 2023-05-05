@@ -127,4 +127,40 @@ return {
   {
     "jabirali/vim-tmux-yank",
   },
+  {
+    "phaazon/hop.nvim",
+    branch = "v2",
+    event = "VeryLazy",
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require("hop").setup { keys = "etovxqpdygfblzhckisuran" }
+    end,
+  },
+  {
+    "SmiteshP/nvim-navic",
+    event = "VeryLazy",
+  },
+  {
+    "MunifTanjim/nui.nvim",
+    event = "VeryLazy",
+  },
+  {
+    "SmiteshP/nvim-navbuddy",
+    event = "VeryLazy",
+    requires = {
+      "neovim/nvim-lspconfig",
+      "SmiteshP/nvim-navic",
+      "MunifTanjim/nui.nvim",
+    },
+    opts = {
+      lsp = {
+        auto_attach = true,
+      },
+    },
+  },
+  {
+    "nvim-pack/nvim-spectre",
+    event = "VeryLazy",
+    config = function() require("spectre").setup() end,
+  },
 }
