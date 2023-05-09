@@ -20,30 +20,37 @@ return {
     end,
   },
   {
+    "rcarriga/nvim-notify",
+    opts = function(_, opts)
+      opts.background_colour = "#000000"
+      return opts
+    end,
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     opts = function(_, opts)
       opts.source_selector.tab_labels = nil
       opts.source_selector.sources = {
         { source = "filesystem" },
         { source = "buffers" },
-        { source = "git_status" }
+        { source = "git_status" },
       }
 
       return opts
-    end
+    end,
   },
   {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
-      local luasnip = require("luasnip");
+      local luasnip = require "luasnip"
 
-      luasnip.config.setup({
+      luasnip.config.setup {
         region_check_events = "CursorHold,InsertLeave,InsertEnter",
         delete_check_events = "TextChanged,InsertEnter",
-      });
+      }
 
-      return opts;
-    end
+      return opts
+    end,
   },
   {
     "onsails/lspkind.nvim",
@@ -78,5 +85,5 @@ return {
       }
       return opts
     end,
-  }
+  },
 }
