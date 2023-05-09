@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH=$HOME/.npm-global/bin:/$HOME/.local/bin:$HOME/Android/Sdk/emulator:/usr/local/go/bin:/$HOME/go/bin:$PATH
+export PATH=$HOME/.npm-global/bin:/$HOME/.local/bin:$HOME/Android/Sdk/emulator:/usr/local/go/bin:/$HOME/go/bin:$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 export TERM=xterm-256color
 export COLORTERM=truecolor
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --margin=2 --color=bg+:#3B4252,bg:#2E3440,spinner:#81A1C1,hl:#616E88,fg:#D8DEE9,header:#616E88,info:#81A1C1,pointer:#81A1C1,marker:#81A1C1,fg+:#D8DEE9,prompt:#81A1C1,hl+:#81A1C1'
@@ -130,5 +130,4 @@ export NVM_DIR="$HOME/.nvm"
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 source /usr/share/autojump/autojump.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source $HOME/scripts/zoxide.zsh
