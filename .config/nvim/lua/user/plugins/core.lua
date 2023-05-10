@@ -43,10 +43,22 @@ return {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
       local luasnip = require "luasnip"
+      local cmp = require "cmp"
 
       luasnip.config.setup {
         region_check_events = "CursorHold,InsertLeave,InsertEnter",
         delete_check_events = "TextChanged,InsertEnter",
+      }
+
+      opts.sorting = {
+        priority_weight = 1.0,
+        comparators = {
+          cmp.config.compare.locality,
+          cmp.config.compare.recently_used,
+          cmp.config.compare.score,
+          cmp.config.compare.offset,
+          cmp.config.compare.order,
+        },
       }
 
       return opts
