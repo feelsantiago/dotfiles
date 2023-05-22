@@ -26,7 +26,9 @@ return {
       disabled = {},
       timeout_ms = 1000,
       filter = function(client)
-        if vim.bo.filetype == "javascript" or vim.bo.filetype == "html" then return client.name == "null-ls" end
+        if vim.bo.filetype == "javascript" or vim.bo.filetype == "html" or vim.bo.filetype == "typescript" then
+          return client.name == "null-ls"
+        end
         return true
       end,
     },

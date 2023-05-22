@@ -59,11 +59,11 @@ return {
     ["<C-\\>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
     ["<leader>h1"] = { "<cmd>HopChar1<CR>", desc = "Hop 1 letter" },
     ["<leader>h2"] = { "<cmd>HopChar2<CR>", desc = "Hop 2 letter" },
-    ["<leader>hl"] = { "<cmd>HopLine<CR>", desc = "Hop 2 letter" },
-    ["<leader>hs"] = { "<cmd>HopLineStart<CR>", desc = "Hop 2 letter" },
-    ["<leader>hv"] = { "<cmd>HopVertical<CR>", desc = "Hop 2 letter" },
-    ["<leader>hp"] = { "<cmd>HopPattern<CR>", desc = "Hop 2 letter" },
-    ["<leader>hw"] = { "<cmd>HopWord<CR>", desc = "Hop 2 letter" },
+    ["<leader>hl"] = { "<cmd>HopLine<CR>", desc = "Hop Line" },
+    ["<leader>hs"] = { "<cmd>HopLineStart<CR>", desc = "Hop Line Start" },
+    ["<leader>hv"] = { "<cmd>HopVertical<CR>", desc = "Hop Vertical" },
+    ["<leader>hp"] = { "<cmd>HopPattern<CR>", desc = "Hop Pattern" },
+    ["<leader>hw"] = { "<cmd>HopWord<CR>", desc = "Hop Word" },
     ["f"] = {
       function() hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = true } end,
       desc = "Find with hop",
@@ -89,6 +89,8 @@ return {
       function() require("spectre").open_file_search { select_word = true } end,
       desc = "Select on current file",
     },
+    ["<leader>lj"] = { "<cmd>JsDoc<CR>", desc = "JSDoc" },
+    ["-"] = { function() require("oil").open() end, desc = "Open Parent Directory" },
   },
   t = {
     ["<C-x>"] = { [[<C-\><C-n>]], desc = "Terminal normal mode" },
@@ -117,5 +119,6 @@ return {
       function() hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = -1 } end,
       desc = "Find with hop",
     },
+    ["<leader>lj"] = { "<cmd>JsDoc<CR>", desc = "JSDoc" },
   },
 }

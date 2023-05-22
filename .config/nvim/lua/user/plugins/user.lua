@@ -163,4 +163,13 @@ return {
     event = "VeryLazy",
     config = function() require("spectre").setup() end,
   },
+  {
+    "heavenshell/vim-jsdoc",
+    build = "make install",
+    event = { "BufEnter *.js", "BufEnter *.ts" },
+  },
+  {
+    "stevearc/oil.nvim",
+    config = function() require("oil").setup() end,
+  },
 }
