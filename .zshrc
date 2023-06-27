@@ -107,7 +107,7 @@ alias docker-stop="systemctl stop docker"
 alias lzd="lazydocker"
 
 # Flutter
-alias flutter-generate="flutter packages pub run build_runner build --delete-conflicting-outputs"
+alias flutter-generate="dart run build_runner build --delete-conflicting-outputs"
 
 # SSH
 alias ssh-git="keychain --agents ssh --eval git-linux"
