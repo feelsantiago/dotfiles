@@ -1,4 +1,5 @@
 return {
+  { "nvim-zh/better-escape.vim", enabled = false },
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)
@@ -50,16 +51,16 @@ return {
         delete_check_events = "TextChanged,InsertEnter",
       }
 
-      opts.sorting = {
-        priority_weight = 1.0,
-        comparators = {
-          cmp.config.compare.locality,
-          cmp.config.compare.recently_used,
-          cmp.config.compare.score,
-          cmp.config.compare.offset,
-          cmp.config.compare.order,
-        },
-      }
+      -- opts.sorting = {
+      --   priority_weight = 1.0,
+      --   comparators = {
+      --     cmp.config.compare.locality,
+      --     cmp.config.compare.recently_used,
+      --     cmp.config.compare.score,
+      --     cmp.config.compare.offset,
+      --     cmp.config.compare.order,
+      --   },
+      -- }
 
       return opts
     end,

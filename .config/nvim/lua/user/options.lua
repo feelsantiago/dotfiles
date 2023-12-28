@@ -12,9 +12,9 @@ return {
     showbreak = "↪ ",
     showtabline = 0,
     termguicolors = true,
-    tabstop = 4,
-    softtabstop = 4,
-    shiftwidth = 4,
+    tabstop = 2,
+    softtabstop = 2,
+    shiftwidth = 2,
   },
   g = {
     mapleader = " ",
@@ -26,5 +26,6 @@ return {
     ui_notifications_enabled = true,
     colors_name = "nord",
     transparent_enabled = true,
+    loaded_syntastic_dart_dartanalyzer_checker = 0,
   },
 }

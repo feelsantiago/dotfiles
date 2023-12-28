@@ -44,6 +44,10 @@ return {
     branch = "topic/jsx-fix",
   },
   {
+    "dart-lang/dart-vim-plugin",
+    event = { "BufEnter *.dart" },
+  },
+  {
     "akinsho/flutter-tools.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
@@ -73,14 +77,15 @@ return {
         widget_guides = {
           enabled = false,
         },
-        lsp = {
-          on_attach = require("astronvim.utils.lsp").on_attach,
+        closing_tags = {
+          highlight = "ErrorMsg", -- highlight for the closing tag
+          prefix = ">",           -- character to use for close tag e.g. > Widget
+          enabled = true          -- set to false to disable
         },
       }
     end,
     ft = "dart",
   },
-  { "dart-lang/dart-vim-plugin" },
   -- {
   --   "ray-x/lsp_signature.nvim",
   --   event = "BufRead",
@@ -170,28 +175,20 @@ return {
   },
   {
     "simrat39/rust-tools.nvim",
-    event = { "BufEnter *.rs" },
-    config = function()
-      local rt = require "rust-tools"
-      local mason = require "mason-registry"
-
-      local codelldb = mason.get_package "codelldb"
-      local extension_path = codelldb:get_install_path() .. "/extension/"
-      local codelldb_path = extension_path .. "adapter/codelldb"
-      local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
-
-      rt.setup {
-        dap = {
-          adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-        },
-        server = {
-          capabilities = require("astronvim.utils.lsp").capabilities,
-          on_attach = function(_, bufnr)
-            vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
-            vim.keymap.set("n", "<leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-          end,
-        },
-      }
-    end,
+    -- config = function()
+    --   local rt = require "rust-tools"
+    --   local mason = require "mason-registry"
+    --
+    --   local codelldb = mason.get_package "codelldb"
+    --   local extension_path = codelldb:get_install_path() .. "/extension/"
+    --   local codelldb_path = extension_path .. "adapter/codelldb"
+    --   local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
+    --
+    --   rt.setup {
+    --     dap = {
+    --       adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
+    --     },
+    --   }
+    -- end,
   },
 }

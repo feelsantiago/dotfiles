@@ -1,4 +1,9 @@
 return {
+  plugins = {
+    init = {
+      ["Darazaki/indent-o-matic"] = { disable = true },
+    },
+  },
   updater = {
     remote = "origin",
     channel = "stable",
@@ -32,7 +37,24 @@ return {
         return true
       end,
     },
-    servers = {},
+    servers = {
+      "dartls",
+    },
+    setup_handlers = {
+      -- dartls = function(_, opts) require("flutter-tools").setup { lsp = opts } end,
+      rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end
+    },
+    config = {
+      dartls = {
+        color = {
+          enabled = true,
+        },
+        settings = {
+          showTodos = true,
+          completeFunctionCalls = true,
+        },
+      },
+    },
   },
   lazy = {
     defaults = { lazy = true },

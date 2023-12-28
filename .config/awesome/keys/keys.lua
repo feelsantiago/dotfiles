@@ -22,7 +22,7 @@ local editor = "vim"
 local gui_editor = "mousepad"
 local file_manager = "nautilus"
 
-local browser = "brave-browser"
+local browser = "thorium-browser"
 local private_browser = browser .. " --incognito"
 
 local rofi_dir = home .. "/.config/rofi/"
@@ -47,7 +47,6 @@ my_dropdown = lain.util.quake({
 -- {{{ Key bindings
 local globalkeys = gears.table.join(
 	awful.key({ modkey }, "F1", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
-
 	awful.key({}, "F12", nil, function()
 		my_dropdown:toggle()
 	end),
@@ -101,21 +100,16 @@ local globalkeys = gears.table.join(
 	awful.key({ modkey, ctrlkey }, "Left", function()
 		awful.client.swap.bydirection("left")
 	end, { description = "swap with next client by index", group = "client" }),
-
 	awful.key({ modkey, ctrlkey }, "Right", function()
 		awful.client.swap.bydirection("right")
 	end, { description = "swap with previous client by index", group = "client" }),
-
 	awful.key({ modkey, ctrlkey }, "Up", function()
 		awful.client.swap.bydirection("up")
 	end, { description = "swap with next client by index", group = "client" }),
-
 	awful.key({ modkey, ctrlkey }, "Down", function()
 		awful.client.swap.bydirection("down")
 	end, { description = "swap with previous client by index", group = "client" }),
-
 	awful.key({ modkey }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
-
 	awful.key({ modkey }, "Tab", function()
 		awful.client.focus.history.previous()
 		if client.focus then
@@ -127,13 +121,9 @@ local globalkeys = gears.table.join(
 	awful.key({ modkey }, "Return", function()
 		spawn(terminal)
 	end, { description = "open a terminal", group = "launcher" }),
-
 	awful.key({ modkey }, "z", awful.tag.history.restore, { description = "View previous tag", group = "tag" }),
-
 	awful.key({ modkey, ctrlkey }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
-
 	awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
-
 	awful.key({ modkey, "Shift" }, "r", function()
 		awful.spawn("reboot")
 	end, { description = "Reboot Computer", group = "awesome" }),
@@ -157,7 +147,6 @@ local globalkeys = gears.table.join(
 	awful.key({ modkey, altkey }, "j", function()
 		awful.tag.incnmaster(1, nil, true)
 	end, { description = "inc the number of master clients", group = "layout" }),
-
 	awful.key({ modkey, altkey }, "k", function()
 		awful.tag.incnmaster(-1, nil, true)
 	end, { description = "dec the number of master clients", group = "layout" }),
@@ -166,7 +155,6 @@ local globalkeys = gears.table.join(
 	awful.key({ modkey, altkey }, "h", function()
 		awful.tag.incncol(1, nil, true)
 	end, { description = "increase the number of columns", group = "layout" }),
-
 	awful.key({ modkey, altkey }, "l", function()
 		awful.tag.incncol(-1, nil, true)
 	end, { description = "decrease the number of columns", group = "layout" }),
@@ -223,15 +211,12 @@ local globalkeys = gears.table.join(
 	awful.key({ modkey, altkey }, "w", function()
 		spawn(scripts_dir .. "window-screenshot")
 	end, { description = "take screenshot of active window", group = "screenshot" }),
-
 	awful.key({ modkey, altkey }, "a", function()
 		spawn(scripts_dir .. "area-screenshot")
 	end, { description = "take screenshot of selection", group = "screenshot" }),
-
 	awful.key({ modkey, altkey }, "g", function()
 		spawn(scripts_dir .. "ocr")
 	end, { description = "Get OCR text of selection to", group = "screenshot" }),
-
 	awful.key({ modkey, "Shift" }, "c", function(c)
 		spawn("xkill")
 	end, { description = "xkill", group = "launcher" }),
