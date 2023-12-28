@@ -29,6 +29,7 @@ run picom
 run flameshot
 run eval `keychain --agents ssh --eval git-linux`
 bash ~/.config/awesome/scripts/cursor_speed
+bash ~/scripts/Kensington_Expert_Setup.sh
 xrdb -merge ~/.Xresources
 
 notify-send "AwesomeWM Loaded"
