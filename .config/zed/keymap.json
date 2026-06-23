@@ -1,0 +1,104 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "(Workspace || Editor) && (vim_mode == normal || vim_mode == visual)",
+    "bindings": {
+      "space f f": "file_finder::Toggle",
+      "space f b": "tab_switcher::ToggleAll",
+      "space e": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space l a": "editor::ToggleCodeActions",
+      "space l f": "editor::Format",
+      "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"],
+      "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
+      "shift-l": ["workspace::SendKeystrokes", "$"],
+      "shift-h": ["workspace::SendKeystrokes", "^"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "space f": "editor::FormatSelections"
+    }
+  },
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "space q": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "space e": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space w": "workspace::Save"
+    }
+  },
+  // Project file search, command palette
+  {
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrevious"
+    }
+  },
+  // Code Actions, Autocomplete
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrevious"
+    }
+  },
+  // Split Panes
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "|": "pane::SplitVertical",
+      "\\": "pane::SplitHorizontal",
+      "ctrl-\\": "terminal_panel::ToggleFocus"
+    }
+  },
+  // Pane Navigation from Project Panel
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "Terminal",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-\\": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "ProjectPanel && !editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "d": "project_panel::NewDirectory",
+      "x": "project_panel::Delete",
+      "r": "project_panel::Rename",
+      "escape": "workspace::ToggleRightDock",
+      "enter": ["workspace::SendKeystrokes", "enter space e"]
+    }
+  }
+]
