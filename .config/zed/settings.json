@@ -1,0 +1,82 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "disable_ai": true,
+  "minimap": {
+    "show": "never"
+  },
+  "inlay_hints": {
+    "enabled": false
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "vim_mode": true,
+  "icon_theme": "Zed (Default)",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Nord"
+  },
+  "lsp_document_colors": "inlay",
+  "inline_code_actions": false,
+  "search": {
+    "button": false,
+    "case_sensitive": true
+  },
+  "project_panel": {
+    "starts_open": false,
+    "sticky_scroll": true,
+    "dock": "right"
+  },
+  "edit_predictions": {
+    "mode": "eager"
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false,
+    "selections_menu": false
+  },
+  "hide_mouse": "on_typing_and_movement",
+  "relative_line_numbers": true,
+  "tab_bar": {
+    "show": true
+  },
+  "scrollbar": {
+    "show": "never"
+  },
+  "preview_tabs": {
+    "enabled": false
+  },
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true
+    }
+  },
+  "lsp": {
+    "angular": {
+      "initialization_options": {
+        "angular_language_server_version": "19.2",
+        "typescript_version": "5.5.3"
+      }
+    }
+  },
+  "languages": {
+    "HTML": {
+      "language_servers": ["angular", "..."]
+    },
+    "Angular": {
+      "language_servers": ["HTML", "..."]
+    }
+  }
+}
